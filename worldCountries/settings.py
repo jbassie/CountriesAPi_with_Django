@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'restframework',
+    'rest_framework',
     'countries.apps.CountriesConfig',
     'corsheaders',
 ]
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'worldCountries.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'countriesdb',
+        'USER':'postgres',
+        'PASSWORD': '9507024922',
+        'HOST':'127.0.0.1',
+        'PORT':'5432',
     }
 }
 
@@ -122,7 +126,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = ('https:localhost:8081', )
+CORS_ORIGIN_WHITELIST = ('https://localhost:8081', )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
